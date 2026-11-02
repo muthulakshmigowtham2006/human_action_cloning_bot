@@ -1,0 +1,120 @@
+<?xml version="1.0" ?>
+
+<sdf version="1.8">
+
+    <world name="robot_world">
+
+        <!-- ================================================= -->
+        <!-- PHYSICS -->
+        <!-- ================================================= -->
+
+        <physics name="1ms" type="ignored">
+            <max_step_size>0.001</max_step_size>
+            <real_time_factor>1.0</real_time_factor>
+        </physics>
+
+
+        <!-- ================================================= -->
+        <!-- SCENE / ENVIRONMENT -->
+        <!-- ================================================= -->
+
+        <scene>
+
+            <!-- Bright ambient illumination -->
+            <ambient>0.65 0.65 0.65 1</ambient>
+
+            <!-- Light gray background -->
+            <background>0.75 0.80 0.85 1</background>
+
+            <!-- Enable shadows -->
+            <shadows>true</shadows>
+
+        </scene>
+
+
+        <!-- ================================================= -->
+        <!-- SUN / MAIN LIGHT -->
+        <!-- ================================================= -->
+
+        <light type="directional" name="sun">
+
+            <cast_shadows>true</cast_shadows>
+
+            <pose>5 5 8 0 0 0</pose>
+
+            <diffuse>1.0 1.0 1.0 1</diffuse>
+
+            <specular>0.6 0.6 0.6 1</specular>
+
+            <attenuation>
+                <range>1000</range>
+                <constant>0.9</constant>
+                <linear>0.01</linear>
+                <quadratic>0.001</quadratic>
+            </attenuation>
+
+            <direction>-0.5 -0.5 -1.0</direction>
+
+        </light>
+
+
+        <!-- ================================================= -->
+        <!-- GROUND PLANE -->
+        <!-- ================================================= -->
+
+        <model name="ground">
+
+            <static>true</static>
+
+            <link name="ground_link">
+
+                <collision name="ground_collision">
+
+                    <geometry>
+
+                        <plane>
+
+                            <normal>0 0 1</normal>
+
+                            <size>20 20</size>
+
+                        </plane>
+
+                    </geometry>
+
+                </collision>
+
+
+                <visual name="ground_visual">
+
+                    <geometry>
+
+                        <plane>
+
+                            <normal>0 0 1</normal>
+
+                            <size>20 20</size>
+
+                        </plane>
+
+                    </geometry>
+
+                    <material>
+
+                        <ambient>0.35 0.35 0.38 1</ambient>
+
+                        <diffuse>0.45 0.45 0.48 1</diffuse>
+
+                        <specular>0.25 0.25 0.25 1</specular>
+
+                    </material>
+
+                </visual>
+
+            </link>
+
+        </model>
+
+    </world>
+
+</sdf>

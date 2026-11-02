@@ -1,0 +1,42 @@
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.save
+.pytest_cache/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Node.js
+node_modules/
+frontend/node_modules/
+
+# Build files
+dist/
+build/
+frontend/dist/
+
+# ROS 2 generated files
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+build/
+install/
+log/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+*.tmp
+.DS_Store
+
+# Personal demonstration data
+data/raw/
+data/processed/
+data/demonstrations/
